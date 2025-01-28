@@ -51,7 +51,7 @@ function UserEditPage() {
         email,
         phone,
         jobTitle,
-        roles  // klíčové: uložit do useru
+        roles  
       };
       await updateUser(updated);
       setMessage("User updated successfully (mock)!");

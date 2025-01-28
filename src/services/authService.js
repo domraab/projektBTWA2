@@ -10,7 +10,6 @@ export async function login(username, password) {
       throw new Error("Invalid credentials");
     }
   
-    // Uložit do localStorage
     localStorage.setItem("user", JSON.stringify(foundUser));
     return foundUser;
   }

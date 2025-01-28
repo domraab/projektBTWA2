@@ -7,7 +7,7 @@ export async function getTasks() {
   }
   
   export async function createTask(taskData) {
-    // V reálné situaci by to byl POST na API
+
     console.log("Simulated: Create task", taskData);
     return { ...taskData, id: Date.now() }; 
   }

@@ -1,8 +1,5 @@
 // src/services/userService.js
 
-// pro ukázku mock, v reálu byste dohlíželi na usera z "users.json" 
-// a přepisovali data v localStorage nebo nějakém store
-
 let mockUsers = [
   {
     id: 1,
@@ -46,7 +43,6 @@ let mockUsers = [
   }
 ];
 
-// vrátí simulovanou kopii 
 export async function getUsers() {
   return mockUsers;
 }
@@ -54,7 +50,7 @@ export async function getUsers() {
 export async function updateUser(updated) {
   const idx = mockUsers.findIndex((u) => u.id === updated.id);
   if (idx === -1) throw new Error("User not found");
-  // Zachovat původní data, pokud nechcete přepisovat password/roles
+
   mockUsers[idx] = { ...mockUsers[idx], ...updated };
   console.log("Simulated: user updated ->", mockUsers[idx]);
   return true;
