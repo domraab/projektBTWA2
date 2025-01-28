@@ -10,7 +10,7 @@ function ProjectForm({ onSubmit }) {
     const newProject = {
       name,
       description,
-      // ...další pole dle potřeby
+
     };
     onSubmit(newProject);
     setName("");

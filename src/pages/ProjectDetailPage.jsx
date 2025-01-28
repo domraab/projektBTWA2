@@ -43,13 +43,13 @@ function ProjectDetailPage() {
     );
   }
 
-  // Změna statusu
+
   const handleChangeStatus = async (newStatus) => {
     await updateProjectStatus(project.id, newStatus);
     setProject({ ...project, status: newStatus });
   };
 
-  // Vytvoření nového úkolu
+
   const handleCreateTask = async (taskData) => {
     const created = await createTask(taskData);
     setProjectTasks([...projectTasks, created]);
@@ -57,10 +57,10 @@ function ProjectDetailPage() {
 
   return (
     <div className="container-fluid">
-      {/* Titulek stránky */}
+
       <h2 className="h3 mb-4 text-gray-800">Project Detail</h2>
 
-      {/* Card pro detail projektu */}
+
       <div className="card shadow mb-4">
         <div className="card-body">
           <h5 className="card-title mb-3">Name: {project.name}</h5>
@@ -70,8 +70,7 @@ function ProjectDetailPage() {
           <p className="card-text">
             <strong>Status:</strong> {project.status}
           </p>
-          
-          {/* Tlačítka pro změnu statusu */}
+
           <div className="mb-3">
             <button
               className="btn btn-sm btn-secondary mr-2"
@@ -89,7 +88,7 @@ function ProjectDetailPage() {
         </div>
       </div>
 
-      {/* Card pro seznam úkolů */}
+
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h6 className="m-0 font-weight-bold text-primary">
@@ -105,7 +104,7 @@ function ProjectDetailPage() {
         </div>
       </div>
 
-      {/* Card pro vytvoření nového Tasku */}
+
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h6 className="m-0 font-weight-bold text-primary">Create Task</h6>

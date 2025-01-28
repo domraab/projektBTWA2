@@ -7,11 +7,10 @@ function ReportsPage() {
   const [tasks, setTasks] = useState([]);
   const [projects, setProjects] = useState([]);
 
-  // Celkový počet
+ 
   const [taskTotal, setTaskTotal] = useState(0);
   const [projectTotal, setProjectTotal] = useState(0);
 
-  // Počty rozložené podle statusu (dynamicky)
   const [taskCounts, setTaskCounts] = useState({});
   const [projectCounts, setProjectCounts] = useState({});
 
@@ -30,13 +29,13 @@ function ReportsPage() {
     loadData();
   }, []);
 
-  // Zpracování tasků
+
   useEffect(() => {
     if (tasks.length > 0) {
       const total = tasks.length;
       setTaskTotal(total);
 
-      // Vytvoříme mapu (objekt) pro počty
+
       const counts = {};
       for (let t of tasks) {
         const st = t.status; 
@@ -49,13 +48,13 @@ function ReportsPage() {
     }
   }, [tasks]);
 
-  // Zpracování projektů
+
   useEffect(() => {
     if (projects.length > 0) {
       const total = projects.length;
       setProjectTotal(total);
 
-      // Vytvoříme mapu (objekt) pro počty
+
       const counts = {};
       for (let p of projects) {
         const st = p.status;
@@ -73,7 +72,7 @@ function ReportsPage() {
       <h2 className="h3 mb-4 text-gray-800">Reports &amp; Statistics</h2>
 
       <div className="row">
-        {/* Card: Task Overview */}
+
         <div className="col-md-6 mb-4">
           <div className="card shadow h-100">
             <div className="card-header py-3">
@@ -94,7 +93,7 @@ function ReportsPage() {
           </div>
         </div>
 
-        {/* Card: Project Overview */}
+
         <div className="col-md-6 mb-4">
           <div className="card shadow h-100">
             <div className="card-header py-3">

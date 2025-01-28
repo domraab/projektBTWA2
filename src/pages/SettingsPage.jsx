@@ -4,10 +4,10 @@ import { getCurrentUser } from "../services/authService";
 import { getUsers, updateUser } from "../services/userService";
 
 function SettingsPage() {
-  const [user, setUser] = useState(null); // načtený uživatel
+  const [user, setUser] = useState(null); 
   const [message, setMessage] = useState("");
 
-  // Lokální stavy pro formulář
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -15,11 +15,11 @@ function SettingsPage() {
   useEffect(() => {
     async function loadData() {
       try {
-        // Získáme info o právě přihlášeném uživateli
+  
         const current = getCurrentUser();
         if (!current) return;
 
-        // Najdeme v mockUsers (nebo v users.json)
+
         const all = await getUsers();
         const found = all.find((u) => u.id === current.id);
         if (found) {
@@ -58,7 +58,6 @@ function SettingsPage() {
     <div className="container-fluid">
       <h1 className="h3 mb-4 text-gray-800">Settings</h1>
 
-      {/* Card wrapper */}
       <div className="row">
         <div className="col-md-6">
           <div className="card shadow mb-4">
@@ -108,7 +107,7 @@ function SettingsPage() {
           </div>
         </div>
 
-        {/* Volitelně další card pro security / change password */}
+
         <div className="col-md-6">
           <div className="card shadow mb-4">
             <div className="card-header py-3">
@@ -117,8 +116,8 @@ function SettingsPage() {
               </h6>
             </div>
             <div className="card-body">
-              <p>For example, change password or 2FA settings here.</p>
-              {/* Třeba v budoucnu implementovat */}
+              <p>Change Password</p>
+
             </div>
           </div>
         </div>

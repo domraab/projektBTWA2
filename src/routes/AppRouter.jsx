@@ -17,7 +17,7 @@ import { isLoggedIn } from '../services/authService';
 import ManagerRoute from "./ManagerRoute";
 
 
-// Příklad ProtectedRoute
+
 function ProtectedRoute({ children }) {
   if (!isLoggedIn()) {
     return <Navigate to="/login" replace />;

@@ -3,7 +3,7 @@ import { getCurrentUser } from "../services/authService";
 import { createProject } from "../services/projectService";
 
 function CreateProjectPage() {
-  // VŽDY na začátku definovat hooks
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("Pending");
@@ -12,7 +12,7 @@ function CreateProjectPage() {
   const currentUser = getCurrentUser();
   const isManager = currentUser?.roles.includes("manager");
 
-  // Teprve teď podmíněně vykreslit
+
   if (!isManager) {
     return <p>Access Denied. Only managers can create projects.</p>;
   }

@@ -8,13 +8,13 @@ function Header() {
   const navigate = useNavigate();
   const user = getCurrentUser();
 
-  // Stav pro text v inputu + seznam všech projektů + odfiltrované projekty
+
   const [searchTerm, setSearchTerm] = useState("");
   const [allProjects, setAllProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   useEffect(() => {
-    // Načítáme všechny projekty
+
     async function loadProjects() {
       try {
         const projects = await getProjects();
@@ -54,7 +54,6 @@ function Header() {
 
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-      {/* Sidebar Toggle (Topbar) pro mobilní verzi */}
       <button
         id="sidebarToggleTop"
         className="btn btn-link d-md-none rounded-circle mr-3"
@@ -62,10 +61,6 @@ function Header() {
         <i className="fa fa-bars"></i>
       </button>
 
-      {/* 
-        1) Na větších šířkách (≥576px) - inline search bar 
-        (d-none d-sm-inline-block = skryto na <576px)
-      */}
       <form
         className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
         onSubmit={(e) => e.preventDefault()}
@@ -86,7 +81,6 @@ function Header() {
             </button>
           </div>
 
-          {/* Zobrazení suggestion listu */}
           {filteredProjects.length > 0 && (
             <ul
               className="list-group"
@@ -113,10 +107,6 @@ function Header() {
         </div>
       </form>
 
-      {/* 
-        2) Pro menší šířky (<576px) - “Search” ikona vpravo (dropdown)
-        - d-sm-none => viditelné jen na XS
-      */}
       <ul className="navbar-nav ml-auto">
         <li className="nav-item dropdown no-arrow d-sm-none">
           <a
@@ -130,7 +120,6 @@ function Header() {
           >
             <i className="fas fa-search fa-fw"></i>
           </a>
-          {/* Dropdown - pro vyhledávací pole na mobilu */}
           <div
             className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
             aria-labelledby="searchDropdown"
@@ -153,7 +142,6 @@ function Header() {
                   </button>
                 </div>
 
-                {/* (Volitelně) i tady zobrazit suggestions */}
                 {filteredProjects.length > 0 && (
                   <ul
                     className="list-group"
@@ -182,9 +170,6 @@ function Header() {
           </div>
         </li>
 
-        {/* 
-          3) Dále user info + logout 
-        */}
         {user && (
           <li className="nav-item dropdown no-arrow">
             <a

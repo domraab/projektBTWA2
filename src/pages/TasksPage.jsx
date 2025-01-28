@@ -1,49 +1,4 @@
 // // src/pages/TasksPage.jsx
-// import React, { useEffect, useState } from 'react';
-// import { getTasks } from '../services/taskService';
-// import TaskList from '../components/Task/TaskList';
-
-// function TasksPage() {
-//   const [tasks, setTasks] = useState([]);
-
-//   useEffect(() => {
-//     (async () => {
-//       const allTasks = await getTasks();
-//       setTasks(allTasks);
-//     })();
-//   }, []);
-
-//   // Ukázka "filtrování" – prozatím jednoduché
-//   const [filterStatus, setFilterStatus] = useState("");
-
-//   const filteredTasks = tasks.filter((t) => {
-//     if (!filterStatus) return true;
-//     return t.status === filterStatus;
-//   });
-
-//   return (
-//     <div>
-//       <h2>All Tasks</h2>
-//       <div>
-//         <label>Filter by status: </label>
-//         <select
-//           value={filterStatus}
-//           onChange={(e) => setFilterStatus(e.target.value)}
-//         >
-//           <option value="">-- All --</option>
-//           <option value="To Do">To Do</option>
-//           <option value="In Progress">In Progress</option>
-//           <option value="Pending">Pending</option>
-//           <option value="Done">Done</option>
-//         </select>
-//       </div>
-//       <TaskList tasks={filteredTasks} />
-//     </div>
-//   );
-// }
-
-// export default TasksPage;
-// src/pages/TasksPage.jsx
 import React, { useEffect, useState } from "react";
 import { getTasks } from "../services/taskService";
 
@@ -63,7 +18,7 @@ function TasksPage() {
   };
 
   const filteredTasks = tasks.filter((t) => {
-    if (!filterStatus) return true; // All
+    if (!filterStatus) return true; 
     return t.status === filterStatus;
   });
 
@@ -88,7 +43,7 @@ function TasksPage() {
         </select>
       </div>
 
-      {/* Karty */}
+
       <div className="row">
         {filteredTasks.map((task) => (
           <div key={task.id} className="col-md-3 mb-4">

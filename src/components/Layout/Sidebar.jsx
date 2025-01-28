@@ -9,12 +9,12 @@ function Sidebar() {
   const userRoles = user?.roles || [];
 
   return (
-    // Hlavní sidebar s SB Admin 2 styly
+
     <ul
       className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
-      {/* Sidebar - Brand */}
+
       <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div className="sidebar-brand-icon rotate-n-15">
           <i className="fas fa-laugh-wink"></i>
@@ -22,10 +22,10 @@ function Sidebar() {
         <div className="sidebar-brand-text mx-3">PROJECT MGMT</div>
       </a>
 
-      {/* Divider */}
+
       <hr className="sidebar-divider my-0" />
 
-      {/* Nav Item - Dashboard */}
+
       <li className="nav-item">
         <Link className="nav-link" to="/">
           <i className="fas fa-fw fa-tachometer-alt"></i>
@@ -33,7 +33,7 @@ function Sidebar() {
         </Link>
       </li>
 
-      {/* Nav Item - Projects */}
+
       <li className="nav-item">
         <Link className="nav-link" to="/projects">
           <i className="fas fa-fw fa-folder"></i>
@@ -41,7 +41,7 @@ function Sidebar() {
         </Link>
       </li>
 
-      {/* Nav Item - Tasks */}
+
       <li className="nav-item">
         <Link className="nav-link" to="/tasks">
           <i className="fas fa-fw fa-tasks"></i>
@@ -49,7 +49,7 @@ function Sidebar() {
         </Link>
       </li>
 
-      {/* Manager-only link */}
+
       {userRoles.includes("manager") && (
         <>
           <li className="nav-item">
@@ -67,7 +67,7 @@ function Sidebar() {
         </>
       )}
 
-      {/* Settings */}
+
       <li className="nav-item">
         <Link className="nav-link" to="/settings">
           <i className="fas fa-fw fa-cog"></i>
@@ -77,7 +77,6 @@ function Sidebar() {
 
       <hr className="sidebar-divider d-none d-md-block" />
 
-      {/* Sidebar Toggler (Sidebar) */}
       <div className="text-center d-none d-md-inline">
         <button className="rounded-circle border-0" id="sidebarToggle"></button>
       </div>

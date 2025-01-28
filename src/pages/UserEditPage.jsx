@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getUsers, updateUser } from "../services/userService";
 
 function UserEditPage() {
-  const { id } = useParams(); // /users/edit/:id
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -12,11 +12,9 @@ function UserEditPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [jobTitle, setJobTitle] = useState("");
-  const [roles, setRoles] = useState([]);  // NOVÉ: pole rolí
+  const [roles, setRoles] = useState([]); 
   const [message, setMessage] = useState("");
 
-  // Předpokládáme v mockUsers např. user.roles = ["manager", "developer"]
-  // Takže v loadData nastavíme form stavy
   useEffect(() => {
     async function loadData() {
       try {
@@ -29,7 +27,7 @@ function UserEditPage() {
           setEmail(found.email || "");
           setPhone(found.phone || "");
           setJobTitle(found.jobTitle || "");
-          setRoles(found.roles || []);  // uložíme do stavu
+          setRoles(found.roles || []);  
         } else {
           setMessage("User not found");
         }
@@ -41,7 +39,7 @@ function UserEditPage() {
     loadData();
   }, [id]);
 
-  // Ukládáme do paměti (mock)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -64,9 +62,9 @@ function UserEditPage() {
     }
   };
 
-  // Handle změn roles – z multi-selectu
+
   const handleRolesChange = (e) => {
-    // e.target.selectedOptions je HTMLCollection 
+
     const selected = Array.from(e.target.selectedOptions).map((o) => o.value);
     setRoles(selected);
   };
@@ -118,7 +116,7 @@ function UserEditPage() {
           />
         </div>
 
-        {/* Multi-select pro role */}
+
         <div className="mb-3">
           <label className="form-label">Roles</label>
           <select
