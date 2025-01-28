@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1001,
+    "projectId": 101,
+    "title": "Gather requirements",
+    "description": "Collect all requirements from stakeholders for redesign.",
+    "assigneeId": 2,
+    "status": "Done",
+    "dueDate": "2023-02-01"
+  },
+  {
+    "id": 1002,
+    "projectId": 101,
+    "title": "Create wireframes",
+    "description": "Design initial wireframes for homepage and subpages.",
+    "assigneeId": 2,
+    "status": "In Progress",
+    "dueDate": "2023-03-01"
+  },
+  {
+    "id": 1003,
+    "projectId": 102,
+    "title": "Define app scope",
+    "description": "Write down main features and scope of the mobile app.",
+    "assigneeId": 1,
+    "status": "Pending",
+    "dueDate": "2023-03-15"
+  },
+  {
+    "id": 1004,
+    "projectId": 102,
+    "title": "UI/UX draft",
+    "description": "Prepare UI/UX draft for the mobile app screens.",
+    "assigneeId": 2,
+    "status": "Pending",
+    "dueDate": "2023-04-10"
+  },
+  {
+    "id": 1005,
+    "projectId": 103,
+    "title": "Identify repetitive tasks",
+    "description": "Discuss with QA and DevOps to find tasks suitable for automation.",
+    "assigneeId": 3,
+    "status": "In Progress",
+    "dueDate": "2023-03-25"
+  },
+  {
+    "id": 1006,
+    "projectId": 103,
+    "title": "Write automation scripts",
+    "description": "Create Python scripts to automate found tasks.",
+    "assigneeId": 4,
+    "status": "On Hold",
+    "dueDate": "2023-05-01"
+  },
+  {
+    "id": 1007,
+    "projectId": 104,
+    "title": "Brainstorm campaign ideas",
+    "description": "Collect possible approaches for product marketing campaign.",
+    "assigneeId": 2,
+    "status": "In Progress",
+    "dueDate": "2023-05-01"
+  },
+  {
+    "id": 1008,
+    "projectId": 104,
+    "title": "Create promotional materials",
+    "description": "Design posters, digital ads, and social media content.",
+    "assigneeId": 3,
+    "status": "Pending",
+    "dueDate": "2023-06-01"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "name": "Web Redesign",
+    "description": "Redesign the company website for a modern look.",
+    "managerId": 1,
+    "status": "In Progress",
+    "startDate": "2023-01-10",
+    "endDate": "2023-04-30"
+  },
+  {
+    "id": 102,
+    "name": "Mobile App",
+    "description": "Develop a cross-platform mobile app for internal use.",
+    "managerId": 1,
+    "status": "Pending",
+    "startDate": "2023-03-01",
+    "endDate": "2023-09-30"
+  },
+  {
+    "id": 103,
+    "name": "Automation Scripts",
+    "description": "Create scripts to automate repetitive tasks in QA and DevOps.",
+    "managerId": 4,
+    "status": "On Hold",
+    "startDate": "2023-02-15",
+    "endDate": "2023-05-01"
+  },
+  {
+    "id": 104,
+    "name": "Marketing Campaign",
+    "description": "Plan and execute a new marketing campaign for product launch.",
+    "managerId": 1,
+    "status": "In Progress",
+    "startDate": "2023-04-01",
+    "endDate": "2023-07-15"
+  }
+]
