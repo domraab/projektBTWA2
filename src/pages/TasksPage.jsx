@@ -1,6 +1,7 @@
 // src/pages/TasksPage.jsx
 import React, { useEffect, useState } from "react";
 import { getTasks } from "../services/taskService";
+import TaskCard from "../components/Task/TaskCard";
 
 function TasksPage() {
   const [tasks, setTasks] = useState([]);
@@ -46,15 +47,7 @@ function TasksPage() {
 
       <div className="row">
         {filteredTasks.map((task) => (
-          <div key={task.id} className="col-md-3 mb-4">
-            <div className="card shadow h-100">
-              <div className="card-body">
-                <h5>{task.title}</h5>
-                <p className="text-muted">Status: {task.status}</p>
-                <p>{task.description}</p>
-              </div>
-            </div>
-          </div>
+          <TaskCard title={task.title} status={task.status} id={task.id} description={task.description}/>
         ))}
       </div>
     </div>

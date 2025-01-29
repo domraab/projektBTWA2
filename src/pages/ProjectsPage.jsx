@@ -1,6 +1,7 @@
 // src/pages/ProjectsPage.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProjectCard from "../components/Project/ProjectCard";
 import { getProjects } from "../services/projectService";
 import { getCurrentUser } from "../services/authService";
 
@@ -31,23 +32,7 @@ function ProjectsPage() {
 
       <div className="row">
         {projects.map((proj) => (
-          <div key={proj.id} className="col-md-3 mb-4">
-            <div className="card shadow h-100">
-              <div className="card-body d-flex flex-column">
-                <h5>{proj.name}</h5>
-                <p className="text-muted">Status: {proj.status}</p>
-                <p>{proj.description}</p>
-
-
-                <Link
-                  to={`/projects/${proj.id}`}
-                  className="btn btn-sm btn-outline-primary mt-auto"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
+          <ProjectCard name={proj.name} description={proj.description} status={proj.status} id={proj.id}/>
         ))}
       </div>
     </div>

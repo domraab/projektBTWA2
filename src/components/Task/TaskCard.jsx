@@ -1,18 +1,17 @@
 // src/components/Task/TaskCard.jsx
 import React from "react";
 
-function TaskCard({ task }) {
+function TaskCard({ id, title, status, description }) {
   return (
-    <div
-      style={{
-        border: '1px solid #ccc',
-        padding: '10px',
-        width: '200px'
-      }}
-    >
-      <h4>{task.title}</h4>
-      <p>Status: {task.status}</p>
+    <div key={id} className="col-md-3 mb-4">
+    <div className="card shadow h-100">
+      <div className="card-body">
+        <h5>{title}</h5>
+        <p className="text-muted">Status: {status}</p>
+        <p>{description}</p>
+      </div>
     </div>
+  </div>
   );
 }
 
